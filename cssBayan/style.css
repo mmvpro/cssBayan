@@ -1,0 +1,238 @@
+html {
+  box-sizing: border-box;
+  font-size: 32px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: "Rampart One", cursive;
+  color: olive;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* ---------------------- */
+
+.container {
+  padding: 1em;
+  max-width: 30em;
+  height: fit-content;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  line-height: 1.1;
+  color: #000000;
+}
+
+/* .tab {
+    width: 100%;
+    padding-bottom: 1em;
+  } */
+
+/* @media (hover: hover) {
+    .tab:hover .i {
+      transform: rotate(45deg);
+      transition: transform 0.5s ease-in-out;
+    }
+  } */
+
+.i {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.accordion:hover .i {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  img:hover {
+    animation: jump-shaking 2s;
+  }
+}
+
+input:checked ~ .i {
+  transform: rotate(45deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.tab-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em;
+  color: olive;
+  line-height: 1.2;
+  padding: 0.2em 0;
+  height: fit-content;
+}
+
+.tab {
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  display: none;
+  z-index: -1;
+}
+
+.tab-label {
+  border-top: 1px solid lightgray;
+  display: block;
+  height: fit-content;
+  width: 100%;
+}
+@media (hover: hover) {
+  .tab-label:hover {
+    cursor: pointer;
+  }
+}
+
+.tab-content {
+  max-height: 0em;
+  text-align: center;
+  transition: all 1s ease;
+}
+
+.tab-content img {
+  max-height: inherit;
+  border-radius: 0.5em;
+}
+@media (hover: hover) {
+  .tab:hover .tab-content {
+    max-height: 50vh;
+    transition: all 0.5s ease;
+  }
+}
+@media (hover: hover) {
+  .tab:hover .i {
+    transform: rotate(45deg);
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+input:checked ~ * .tab-content {
+  max-height: 50vh;
+}
+input:checked ~ * .tab-content {
+  margin: 0.3em 0 0.5em 0;
+}
+@media (hover: hover) {
+  .tab:hover .tab-content {
+    margin: 0.3em 0 0.5em 0;
+  }
+}
+
+input:checked ~ .tab-label .i {
+  transform: rotate(45deg);
+}
+input:checked ~ * .tab-top {
+  color: #000000;
+}
+@media (hover: hover) {
+  .accordion:hover .tab-top {
+    color: #000000;
+  }
+}
+
+.tab:active {
+  opacity: 0.7;
+}
+.tab:active .tab-top {
+  color: olive;
+}
+
+@media (hover: none) {
+  .i {
+    opacity: 1;
+  }
+}
+
+@keyframes jump-shaking {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(-9px);
+  }
+  35% {
+    transform: translateY(-9px) rotate(17deg);
+  }
+  55% {
+    transform: translateY(-9px) rotate(-17deg);
+  }
+  65% {
+    transform: translateY(-9px) rotate(17deg);
+  }
+  75% {
+    transform: translateY(-9px) rotate(-17deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  html {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  .i {
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 18px;
+  }
+}
